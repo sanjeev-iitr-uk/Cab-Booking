@@ -1,0 +1,40 @@
+{
+  "name": "cab-booking",
+  "version": "1.0.0",
+  "description": "Minimum Setup - Cab Booking Service in Node-Express JS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "mongoose": "^4.4.20",
+    "morgan": "~1.6.1",
+    "notarealdb": "^0.2.2",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "debug": ">=2.6.9",
+    "jest": "^26.1.0",
+    "nodemon": "^1.18.4",
+    "supertest": "^4.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjeev-iitr-uk/Cab-Booking.git"
+  },
+  "keywords": [
+    "cab",
+    "booking"
+  ],
+  "author": "sanjeev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanjeev-iitr-uk/Cab-Booking/issues"
+  },
+  "homepage": "https://github.com/sanjeev-iitr-uk/Cab-Booking#readme"
+}
