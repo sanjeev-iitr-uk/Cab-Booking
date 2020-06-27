@@ -46,3 +46,6 @@ Request Parameters:
 lattitude - lattitude of the destination <required>,
 longitude - longitude of the destination<required>,
 radius- range in KM<required>,
+
+### Distance Calculation
+Distance is calculated using - Haversine formula
