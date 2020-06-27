@@ -24,10 +24,10 @@ example- http://localhost:8000/ride/start/?lattitude=19.116046&longitude=72.9093
 
 type: **GET**
 
-Request Parameters: 
-lattitude - lattitude of the user<required>,
-longitude - longitude of the user<required>,
-color - color of the cab <optional>
+- Request Parameters:
+- lattitude - lattitude of the user<required>,
+- longitude - longitude of the user<required>,
+- color - color of the cab <optional>
 
 ### Complete a Ride
 http://localhost:8000/ride/end/?id={cabID}lattitude={lattitude}&longitude={longitude}
@@ -36,10 +36,10 @@ example- http://localhost:8000/ride/end/?id=3&lattitude=19.214203&longitude=72.9
 
 type: **GET**
 
-Request Parameters:
-lattitude - lattitude of the destination <required>,
-longitude - longitude of the destination<required>,
-id - Cab ID <required>
+- Request Parameters:
+- lattitude - lattitude of the destination <required>,
+- longitude - longitude of the destination<required>,
+- id - Cab ID <required>
 
 ### Search Available Cabs- in given range
 
@@ -49,14 +49,14 @@ example- http://localhost:8000/ride/search?radius=50&lattitude=19.214203&longitu
 
 type: **GET**
 
-Request Parameters:
-lattitude - lattitude of the destination <required>,
-longitude - longitude of the destination<required>,
-radius- range in KM<required>,
+- Request Parameters:
+- lattitude - lattitude of the destination <required>,
+- longitude - longitude of the destination<required>,
+- radius- range in KM<required>,
 
 ### Distance Calculation
 Distance is calculated using - Haversine formula
 
 ### Test
-1. endpoint testing using jest
-2- use command npm test
+- endpoint testing using jest
+- use command npm test
