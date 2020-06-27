@@ -1,0 +1,49 @@
+{
+  "cabs": [
+    {
+      "id": 1,
+      "driverName": "driver 1",
+      "driverNumber": "0000000001",
+      "lattitude": 0,
+      "longitude": 0,
+      "isBooked": false,
+      "color": "WHITE"
+    },
+    {
+      "id": 2,
+      "driverName": "driver 2",
+      "driverNumber": "0000000002",
+      "lattitude": 19.214203,
+      "longitude": 72.980858,
+      "isBooked": true,
+      "color": "PINK"
+    },
+    {
+      "id": 3,
+      "driverName": "driver 3",
+      "driverNumber": "0000000003",
+      "lattitude": 19.214203,
+      "longitude": 72.980858,
+      "isBooked": false,
+      "color": "PINK"
+    },
+    {
+      "id": 4,
+      "driverName": "driver 4",
+      "driverNumber": "0000000004",
+      "lattitude": 20,
+      "longitude": 10,
+      "isBooked": false,
+      "color": "WHITE"
+    },
+    {
+      "id": 5,
+      "driverName": "driver 5",
+      "driverNumber": "0000000005",
+      "lattitude": 20,
+      "longitude": 20,
+      "isBooked": false,
+      "color": "WHITE"
+    }
+  ]
+}

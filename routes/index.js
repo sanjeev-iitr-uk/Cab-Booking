@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Fuber' });
+  res.render('index', { title: 'Cab Booking Service' });
 });
 var rideRoutes = require('./ride');
 

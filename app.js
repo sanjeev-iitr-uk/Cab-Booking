@@ -4,7 +4,6 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var routes = require('./routes/index');
-
 var app = express();
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

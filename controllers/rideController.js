@@ -1,6 +1,6 @@
 // const Post = require('../models/post');
 const RideHelper = require('../helpers');
-const cabs = require('../models/db');
+const db = require('../models/db');
 const PRICE_PER_KM = 2;
 exports.startRide = (req, res, next) => {
   var lattitude = Number(req.query.lattitude);
@@ -12,11 +12,10 @@ exports.startRide = (req, res, next) => {
   var color = req.query.color || null;
   var cab = RideHelper.getClosestCab(userLocation, color);
   if (cab) {
-    cabs.update({
-      ...cab,
-      id: cab.id,
-      isBooked: true,
-    })
+    db.get('cabs')
+    .find({ id: cab.id })
+    .assign({ isBooked: true })
+    .write()
     res.json({
       message: "Cab booked!",
       cabID: cab.id,
@@ -39,7 +38,9 @@ exports.endRide = (req, res, next) => {
     lattitude: lattitude,
     longitude: longitude
   };
-  var userCab = cabs.get(cabID);
+  var userCab = db.get('cabs')
+    .find({ id: cabID })
+    .value()
   if (userCab) {
     if (userCab.isBooked) {
       var cabLocation = {
@@ -51,13 +52,14 @@ exports.endRide = (req, res, next) => {
         cabLocation.longitude,
         location.lattitude,
         location.longitude);
-      cabs.update({
-        ...userCab,
-        id: cabID,
+      db.get('cabs')
+      .find({ id: cabID })
+      .assign({
         isBooked: false,
         lattitude,
         longitude
       })
+      .write()
       const bill = parseInt(distance * PRICE_PER_KM)
       res.json({
         message: "Ride completed!",
@@ -84,7 +86,7 @@ exports.cabsList = (req, res, next) => {
     lattitude: lattitude,
     longitude: longitude
   };
-  var cabsList = cabs.list();
+  var cabsList = db.get('cabs').value()
   var availableCabs = cabsList.filter(cab => {
     var d = RideHelper.getDistance(
       cab.lattitude,

@@ -1,4 +1,4 @@
-const cabs = require('../models/db');
+const db = require('../models/db');
 
 // function getDistance(location1, location2) {
 //   var a = location1.lattitude - location2.lattitude;
@@ -25,7 +25,7 @@ function deg2rad(deg) {
 }
 
 function getClosestCab (location, color) {
-  var cabsList = cabs.list();
+  var cabsList = db.get('cabs').value();
   var closest = null;
   var closestDistance = Infinity;
   cabsList.forEach(function(cab) {
