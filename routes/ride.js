@@ -7,7 +7,7 @@ const endRideValidator = requestValidator.searchRideValidator;
 const searchRideValidator = requestValidator.searchRideValidator;
 const router = express.Router();
 
-// GET /ride
+// GET /ride with validation middleware and controller
 router.get('/start', startRideValidator, fraudDetection, rideController.startRide);
 router.get('/end', endRideValidator, fraudDetection, rideController.endRide);
 router.get('/search', searchRideValidator, fraudDetection, rideController.cabsList);

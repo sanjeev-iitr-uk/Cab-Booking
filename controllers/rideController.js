@@ -2,6 +2,9 @@
 const RideHelper = require('../helpers');
 const db = require('../models/db');
 const PRICE_PER_KM = 2;
+
+// controller to start the ride
+
 exports.startRide = (req, res, next) => {
   var lattitude = Number(req.query.lattitude);
   var longitude = Number(req.query.longitude);
@@ -30,6 +33,9 @@ exports.startRide = (req, res, next) => {
       });
   }
 };
+
+// controller to end the ride 
+
 exports.endRide = (req, res, next) => {
   var cabID = parseInt(req.query.id);
   var lattitude = Number(req.query.lattitude);
@@ -77,6 +83,8 @@ exports.endRide = (req, res, next) => {
     });
   }
 };
+
+// controller to show all the available cabs
 
 exports.cabsList = (req, res, next) => {
   var radius = parseInt(req.query.radius);

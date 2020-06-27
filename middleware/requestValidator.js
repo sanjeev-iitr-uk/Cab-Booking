@@ -1,3 +1,5 @@
+// request validators
+
 const startRideValidator = (req, res, next) => {
   if (!req.query.lattitude || !req.query.longitude || isNaN(req.query.lattitude) || isNaN(req.query.longitude)) {
     // const error = new Error('Invalid Parameters !');

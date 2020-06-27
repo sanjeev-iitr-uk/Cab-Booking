@@ -4,6 +4,9 @@
 // const store = new DataStore('../database');
 // const cabs = store.collection('cabs');
 // module.exports = cabs;
+
+// fake database setup using lowdb npm module 
+
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
  

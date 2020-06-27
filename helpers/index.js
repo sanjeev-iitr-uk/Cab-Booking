@@ -6,6 +6,9 @@ const db = require('../models/db');
 //   var c = Math.sqrt(a*a + b*b);
 //   return c;
 // }
+
+// funtion to calculate the distance with haversine formula 
+
 function getDistance(lat1,lon1,lat2,lon2) {
   var R = 6371; // Radius of the earth in km
   var dLat = deg2rad(lat2-lat1);  // deg2rad below
@@ -23,6 +26,7 @@ function getDistance(lat1,lon1,lat2,lon2) {
 function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
+// helper to get the closest cab
 
 function getClosestCab (location, color) {
   var cabsList = db.get('cabs').value();
