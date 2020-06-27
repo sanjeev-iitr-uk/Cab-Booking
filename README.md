@@ -10,14 +10,17 @@
 
 ### Setup
 1. Clone the repository.
-2. update/modify - cabs data under models>data>cabs.json
+2. update/modify - default cabs database in models>db.js
 3. Run `npm install` to install all dependencies.
 4. Run `npm start` to run the project.
+5. Default PORT - 8000
 
 
 
 ### Book a cab
 http://localhost:3000/ride/start/?lattitude={lattitude}&longitude={longitude}&color={color}
+
+ex- http://localhost:8000/ride/start/?lattitude=19.116046&longitude=72.909340&color=pink
 
 type: **GET**
 
@@ -28,6 +31,7 @@ color - color of the cab <optional>
 
 ### Complete a Ride
 http://localhost:3000/ride/end/?id={cabID}lattitude={lattitude}&longitude={longitude}
+ex- http://localhost:8000/ride/end/?id=3&lattitude=19.214203&longitude=72.980858
 
 type: **GET**
 
@@ -39,6 +43,7 @@ id - Cab ID <required>
 ### Search Available Cabs- in given range
 
 http://localhost:4000/ride/search
+ex- http://localhost:8000/ride/search?radius=1000&lattitude=19.214203&longitude=72.980858
 
 type: **GET**
 
@@ -49,3 +54,7 @@ radius- range in KM<required>,
 
 ### Distance Calculation
 Distance is calculated using - Haversine formula
+
+### Test
+1. endpoint testing using jest
+2- use command npm test
